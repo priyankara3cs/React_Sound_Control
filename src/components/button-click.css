@@ -1,0 +1,15 @@
+.button-click {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #728927;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-click:hover {
+  background-color: #9eb749;
+  transform: scale(1.05);
+}

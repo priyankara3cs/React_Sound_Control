@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useSoundContext } from "./SoundContext"; // Import the sound context
+import ButtonHover from "./button-hover";
+import ButtonClick from "./button-click";
 
 const ScrollSound = () => {
   const [isUserInteracted, setIsUserInteracted] = useState(false);
@@ -83,6 +85,17 @@ const Gallery = () => {
           </motion.div>
         ))}
       </div>
+
+      <br />
+      <br />
+
+      <ButtonClick />
+
+      <br />
+      <br />
+      <br />
+
+      <ButtonHover />
     </div>
   );
 };
