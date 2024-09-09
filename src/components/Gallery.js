@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useSoundContext } from "./SoundContext"; // Import the sound context
 import ButtonHover from "./button-hover";
 import ButtonClick from "./button-click";
+import ButtonHoverClick from "./button-hover-click";
 
 const ScrollSound = () => {
   const [isUserInteracted, setIsUserInteracted] = useState(false);
@@ -96,6 +97,12 @@ const Gallery = () => {
       <br />
 
       <ButtonHover />
+
+      <br />
+      <br />
+      <br />
+
+      <ButtonHoverClick />
 
       <br />
       <br />
