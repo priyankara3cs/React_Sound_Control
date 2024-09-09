@@ -70,7 +70,7 @@ const galleryItems = [
 
 const Gallery = () => {
   return (
-    <div style={{ height: "120vh" }}>
+    <div className="gallery-page">
       <ScrollSound />
       <div className="gallery">
         {galleryItems.map((item) => (
@@ -96,6 +96,10 @@ const Gallery = () => {
       <br />
 
       <ButtonHover />
+
+      <br />
+      <br />
+      <br />
     </div>
   );
 };
