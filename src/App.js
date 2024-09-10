@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import About from "./components/About";
 import GooBlobs from "./components/goo-blobs";
+import SandBox from "./components/sandbox";
 
 import { SoundProvider } from "./components/SoundContext"; // Import SoundProvider instead of SoundContextProvider
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Gallery />} />
           <Route path="/about" element={<About />} />
           <Route path="/goo-blobs" element={<GooBlobs />} />
+          <Route path="/sandbox" element={<SandBox />} />
         </Routes>
       </Router>
       <Footer />

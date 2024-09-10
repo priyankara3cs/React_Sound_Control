@@ -46,6 +46,13 @@ const Navbar = () => {
             label="Goo Blobs"
           />
         </li>
+        <li>
+          <ButtonWithSound
+            to="/sandbox"
+            soundSrc="/sounds/old-computer-click-152513.mp3"
+            label="Sandbox"
+          />
+        </li>
       </ul>
       <button onClick={toggleMute} style={styles.muteButton}>
         {isMuted ? "Unmute" : "Mute"}
