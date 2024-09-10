@@ -15,7 +15,9 @@ export default function App() {
     <div className="b-container">
       <div className="b-main" onClick={() => setOpen(!open)}>
         <animated.div className="b-fill" style={props} />
-        <div className="b-content">{open ? "Click Me" : "Click Me"}</div>
+        <div className="b-content">
+          {open ? "Click Me Again!" : "Click Me!"}
+        </div>
       </div>
     </div>
   );
