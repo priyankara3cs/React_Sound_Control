@@ -1,6 +1,3 @@
-/* General container setup */
-
-
 .container-1 {
   position: relative;
   width: 100vw;
@@ -13,7 +10,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  filter: url('#goo');
+  filter: url("#goo");
 }
 
 .ball {

@@ -66,6 +66,28 @@ nav ul li {
   height: 120vh;
 }
 
+/* Mobile Responsive Styles */
+@media screen and (max-width: 500px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul li {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .muteButton {
+    margin: 10px 0 0;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .gallery-page {
     height: auto;

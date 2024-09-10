@@ -38,6 +38,7 @@ const App = () => {
         overflow: "hidden",
         cursor: "pointer",
       }}
+      className="overflow"
     >
       <Parallax ref={parallax} pages={3} horizontal>
         <Page offset={0} gradient="pink" onClick={() => scroll(1)} />
