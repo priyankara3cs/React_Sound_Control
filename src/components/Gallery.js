@@ -4,6 +4,7 @@ import { useSoundContext } from "./SoundContext"; // Import the sound context
 import ButtonHover from "./button-hover";
 import ButtonClick from "./button-click";
 import ButtonHoverClick from "./button-hover-click";
+import LoadingButton from "./loading-button";
 
 const ScrollSound = () => {
   const [isUserInteracted, setIsUserInteracted] = useState(false);
@@ -103,6 +104,12 @@ const Gallery = () => {
       <br />
 
       <ButtonHoverClick />
+
+      <br />
+      <br />
+      <br />
+
+      <LoadingButton />
 
       <br />
       <br />
