@@ -1,0 +1,38 @@
+/* General container setup */
+
+
+.container-1 {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.balls {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  filter: url('#goo');
+}
+
+.ball {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: lightcoral;
+  border-radius: 50%;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0.3;
+}
+
+.ball:nth-child(2) {
+  width: 100px;
+  height: 100px;
+  opacity: 0.5;
+}
+
+.ball:nth-child(3) {
+  width: 80px;
+  height: 80px;
+}

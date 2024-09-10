@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import About from "./components/About";
+import GooBlobs from "./components/goo-blobs";
+
 import { SoundProvider } from "./components/SoundContext"; // Import SoundProvider instead of SoundContextProvider
 
 function App() {
@@ -15,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Gallery />} />
           <Route path="/about" element={<About />} />
+          <Route path="/goo-blobs" element={<GooBlobs />} />
         </Routes>
       </Router>
       <Footer />

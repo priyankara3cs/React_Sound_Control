@@ -39,6 +39,13 @@ const Navbar = () => {
             label="About"
           />
         </li>
+        <li>
+          <ButtonWithSound
+            to="/goo-blobs"
+            soundSrc="/sounds/old-computer-click-152513.mp3"
+            label="Goo Blobs"
+          />
+        </li>
       </ul>
       <button onClick={toggleMute} style={styles.muteButton}>
         {isMuted ? "Unmute" : "Mute"}
