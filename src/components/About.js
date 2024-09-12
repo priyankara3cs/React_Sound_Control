@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSoundContext } from "./SoundContext"; // Import the sound context
+import "./About.css";
+import { TailSpin } from "react-loader-spinner";
+import { useNavigate } from "react-router-dom";
 
 const ScrollSound = () => {
   const [isUserInteracted, setIsUserInteracted] = useState(false);
@@ -60,12 +63,44 @@ const ScrollSound = () => {
 };
 
 const About = () => {
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    setLoading(true);
+
+    // Simulate a delay for the loader
+    setTimeout(() => {
+      navigate("/sandbox");
+    }, 2000); // 2 seconds loading time, adjust as needed
+  };
+
   return (
     <div style={{ height: "120vh" }}>
       <ScrollSound />
       <div style={{ marginLeft: "4%" }}>
         <h2>About</h2>
       </div>
+      <br />
+      <br />
+      <br />
+
+      <center>
+        <div>
+          <button onClick={handleClick}>Go to Sandbox Page</button>
+
+          {loading && (
+            <div className="loading-container">
+              <TailSpin
+                height="80"
+                width="80"
+                color="#00BFFF"
+                ariaLabel="loading"
+              />
+            </div>
+          )}
+        </div>
+      </center>
     </div>
   );
 };
