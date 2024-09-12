@@ -87,7 +87,9 @@ const About = () => {
 
       <center>
         <div>
-          <button onClick={handleClick}>Go to Sandbox Page</button>
+          <button className="hover-button-load-page" onClick={handleClick}>
+            Go to Load Animation Page
+          </button>
 
           {loading && (
             <div className="loading-container">

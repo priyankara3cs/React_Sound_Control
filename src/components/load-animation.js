@@ -66,18 +66,22 @@ const About = () => {
   }, []);
 
   return (
-    <div className={`page-container ${isPageVisible ? "expand" : ""}`}>
-      <ScrollSound />
-      <div style={{ marginLeft: "4%" }}>
-        <h2>Load Animation</h2>
-      </div>
-      <br />
-      <br />
-      <br />
+    <div style={{ backgroundColor: "#bbb" }}>
+      <div className={`page-container ${isPageVisible ? "expand" : ""}`}>
+        <ScrollSound />
+        <div style={{ marginLeft: "4%" }}>
+          <h2>Load Animation</h2>
+        </div>
+        <br />
+        <br />
+        <br />
 
-      <center>
-        <LoadingButton />
-      </center>
+        <div style={{marginLeft:"4%", marginRight:"4%"}}>
+          <center>
+            <LoadingButton />
+          </center>
+        </div>
+      </div>
     </div>
   );
 };
