@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSoundContext } from "./SoundContext"; // Import the sound context
+import useSound from "use-sound"; // Make sure to import useSound
 import "./About.css";
 import { TailSpin } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
@@ -59,20 +60,37 @@ const ScrollSound = () => {
     };
   }, [isUserInteracted, hasPlayedSound, isAtTop, isMuted]); // Re-run effect when isMuted changes
 
-  return null; // This component doesn't render anything
+  return null; // No rendering needed
 };
 
 const About = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  const { isMuted } = useSoundContext(); // Get mute state from context
+
+  // Define sounds within About
+  const hoverSoundUrl = "/sounds/button-hover-click.wav";
+  const [playHoverSound] = useSound(hoverSoundUrl, { volume: 1 });
+
+  const clickSoundUrl = "/sounds/old-computer-click-152513.mp3";
+  const [playClickSound] = useSound(clickSoundUrl, { volume: 1 });
+
+  const handleMouseEnter = () => {
+    if (!isMuted) {
+      playHoverSound();
+    }
+  };
+
   const handleClick = () => {
+    if (!isMuted) {
+      playClickSound();
+    }
     setLoading(true);
 
-    // Simulate a delay for the loader
     setTimeout(() => {
       navigate("/load-animation");
-    }, 2000); // 2 seconds loading time, adjust as needed
+    }, 2000); // Simulate delay for the loader
   };
 
   return (
@@ -87,7 +105,11 @@ const About = () => {
 
       <center>
         <div>
-          <button className="hover-button-load-page" onClick={handleClick}>
+          <button
+            className="hover-button-load-page"
+            onClick={handleClick}
+            onMouseEnter={handleMouseEnter}
+          >
             Go to Load Animation Page
           </button>
 
