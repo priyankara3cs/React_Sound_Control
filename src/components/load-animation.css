@@ -1,0 +1,15 @@
+.page-container {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.8s ease-out;
+  overflow: hidden; /* To prevent overflow during transition */
+}
+
+.page-container.expand {
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  transform: scale(1);
+}

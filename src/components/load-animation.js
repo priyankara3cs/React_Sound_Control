@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
+import LoadingButton from "./loading-button";
 import { useSoundContext } from "./SoundContext"; // Import the sound context
-import "./About.css";
-import { TailSpin } from "react-loader-spinner";
-import { useNavigate } from "react-router-dom";
+import "./load-animation.css";
 
 const ScrollSound = () => {
   const [isUserInteracted, setIsUserInteracted] = useState(false);
@@ -63,43 +62,25 @@ const ScrollSound = () => {
 };
 
 const About = () => {
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  const [isPageVisible, setIsPageVisible] = useState(false); // New state for page animation
 
-  const handleClick = () => {
-    setLoading(true);
-
-    // Simulate a delay for the loader
-    setTimeout(() => {
-      navigate("/load-animation");
-    }, 2000); // 2 seconds loading time, adjust as needed
-  };
+  useEffect(() => {
+    // Trigger the expand animation after component mounts
+    setIsPageVisible(true);
+  }, []);
 
   return (
-    <div style={{ height: "120vh" }}>
+    <div className={`page-container ${isPageVisible ? "expand" : ""}`}>
       <ScrollSound />
       <div style={{ marginLeft: "4%" }}>
-        <h2>About</h2>
+        <h2>Load Animation</h2>
       </div>
       <br />
       <br />
       <br />
 
       <center>
-        <div>
-          <button onClick={handleClick}>Go to Sandbox Page</button>
-
-          {loading && (
-            <div className="loading-container">
-              <TailSpin
-                height="80"
-                width="80"
-                color="#00BFFF"
-                ariaLabel="loading"
-              />
-            </div>
-          )}
-        </div>
+        <LoadingButton />
       </center>
     </div>
   );
