@@ -17,13 +17,11 @@ const ScrollSound = () => {
     const playScrollSound = () => {
       const scrollPosition = window.scrollY;
 
-      // Check if user is back at the top
       if (scrollPosition === 0) {
         setIsAtTop(true);
         setHasPlayedSound(false); // Reset so the sound can play again when scrolling down
       }
 
-      // Play sound when scrolling down from the top after user interaction and if sound isn't muted
       if (
         isUserInteracted &&
         !hasPlayedSound &&
@@ -45,13 +43,11 @@ const ScrollSound = () => {
       }
     };
 
-    // Listen for user interaction and scroll events
     window.addEventListener("scroll", playScrollSound);
     window.addEventListener("click", handleUserInteraction);
-    window.addEventListener("keydown", handleUserInteraction); // Capture keyboard events as interaction
+    window.addEventListener("keydown", handleUserInteraction);
 
     return () => {
-      // Cleanup listeners when component unmounts
       window.removeEventListener("scroll", playScrollSound);
       window.removeEventListener("click", handleUserInteraction);
       window.removeEventListener("keydown", handleUserInteraction);
@@ -62,11 +58,11 @@ const ScrollSound = () => {
 };
 
 const About = () => {
-  const [isPageVisible, setIsPageVisible] = useState(false); // New state for page animation
+  const [isPageVisible, setIsPageVisible] = useState(false);
 
   useEffect(() => {
-    // Trigger the expand animation after component mounts
-    setIsPageVisible(true);
+    // Ensure animation triggers after page load
+    setTimeout(() => setIsPageVisible(true), 0); // Using timeout to delay and ensure animation works after a refresh
   }, []);
 
   return (
