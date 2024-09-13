@@ -26,6 +26,9 @@ const Hero = () => {
         {/* Glowing Sci-fi Text */}
         <ParallaxLayer offset={0} speed={0.3}>
           <div className="hero-content">
+            <br />
+            <br />
+            <br />
             <h1 className="glowing-text">Welcome to the Future</h1>
             <p className="hero-subtext">Explore the unknown universe</p>
             <button className="hero-button">Discover More</button>
