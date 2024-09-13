@@ -16,6 +16,8 @@
     "react-loader-spinner": "^6.1.6",
     "react-router-dom": "^6.26.1",
     "react-scripts": "5.0.1",
+    "react-spring": "^9.7.4",
+    "react-tsparticles": "^2.12.2",
     "use-sound": "^4.0.3",
     "web-vitals": "^2.1.4"
   },

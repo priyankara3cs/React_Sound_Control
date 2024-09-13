@@ -9,6 +9,7 @@ import SandBox from "./components/sandbox";
 import LoadAnimation from "./components/load-animation";
 import Test from "./components/test";
 import ListPages from "./components/ListPages/list-pages";
+import Hero from "./components/Hero"
 
 import { SoundProvider } from "./components/SoundContext"; // Import SoundProvider instead of SoundContextProvider
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/load-animation" element={<LoadAnimation />} />
           <Route path="/test" element={<Test />} />
           <Route path="/list-pages" element={<ListPages />} />
+          <Route path="/hero" element={<Hero />} />
         </Routes>
       </Router>
       <Footer />
