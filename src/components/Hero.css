@@ -1,16 +1,28 @@
-.hero-banner {
+.hero-banner-1 {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  background-color: #000; /* Fallback */
+  background-color: #012020 !important;
+}
+
+.hero-video-1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: -2; /* Place the video behind everything */
+  object-fit: cover; /* Ensures the video covers the whole area */
 }
 
 .hero-content {
   text-align: center;
   color: #00ffff;
+  z-index: 1; /* Ensure it's above the robot and video */
 }
 
 .glowing-text {
@@ -21,9 +33,15 @@
 }
 
 @keyframes flicker {
-  0% { text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff; }
-  50% { text-shadow: 0 0 50px #00ffff, 0 0 60px #00ffff; }
-  100% { text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff; }
+  0% {
+    text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+  }
+  50% {
+    text-shadow: 0 0 50px #00ffff, 0 0 60px #00ffff;
+  }
+  100% {
+    text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+  }
 }
 
 .hero-subtext {
@@ -48,4 +66,8 @@
 .hero-button:hover {
   box-shadow: 0 0 40px rgba(0, 255, 255, 1);
   transform: scale(1.1);
+}
+
+.robot {
+  position: relative;
 }

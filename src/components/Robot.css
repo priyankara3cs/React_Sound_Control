@@ -1,0 +1,56 @@
+.robot-container {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+
+.robot-svg {
+  width: 200px;
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Glowing robot body animation */
+#robot-body {
+  animation: glowing-robot 2s infinite alternate;
+}
+
+@keyframes glowing-robot {
+  0% {
+    fill: #3c3c3c;
+  }
+  100% {
+    fill: #00ffff;
+  }
+}
+
+/* Arm and hand animations */
+line {
+  transform-origin: center;
+}
+
+@keyframes robot-arm-move {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

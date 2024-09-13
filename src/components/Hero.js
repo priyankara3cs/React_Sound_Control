@@ -1,18 +1,26 @@
 import React from "react";
 import Particles from "react-tsparticles";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import "./Hero.css"; // Import CSS for effects
+import "./Hero.css";
+import Robot from "./Robot"; // Import the robot component
 
 const Hero = () => {
   return (
-    <div className="hero-banner">
+    <div className="hero-banner-1">
       {/* Parallax Background */}
       <Parallax pages={1}>
+        {/* Video Background */}
+        <ParallaxLayer speed={0} factor={1}>
+          <video autoPlay loop muted playsInline className="hero-video-1">
+            <source src="/videos/8721928.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </ParallaxLayer>
+
+        {/* Particle Background */}
         <ParallaxLayer speed={0.5}>
-          {/* Particle Background */}
           <Particles
             options={{
-              background: { color: "#000" },
               particles: {
                 number: { value: 100 },
                 size: { value: 3 },
@@ -21,6 +29,13 @@ const Hero = () => {
               },
             }}
           />
+        </ParallaxLayer>
+
+        {/* Robot Animation */}
+        <ParallaxLayer offset={0} speed={0.3}>
+          <div className="robot-container">
+            <Robot /> {/* Animated Robot */}
+          </div>
         </ParallaxLayer>
 
         {/* Glowing Sci-fi Text */}
