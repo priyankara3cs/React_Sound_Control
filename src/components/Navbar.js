@@ -59,7 +59,7 @@ const Navbar = () => {
             soundSrc="/sounds/old-computer-click-152513.mp3"
             label="List Pages"
           />
-        </li>{" "}
+        </li>
         <li>
           <ButtonWithSound
             to="/hero/"
