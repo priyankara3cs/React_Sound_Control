@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom"; // Ensure you're importing the navigate hook if you're using react-router-dom
 import Particles from "react-tsparticles";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import useSound from "use-sound"; // Ensure you are using a sound library like use-sound
 import "./Hero.css";
 import { useSoundContext } from "./SoundContext";
 import Robot from "./Robot"; // Import the robot component
@@ -8,6 +10,7 @@ import Robot from "./Robot"; // Import the robot component
 const Hero = () => {
   const { isMuted } = useSoundContext(); // Get the mute state from context
   const audioRef = useRef(null); // Reference to the audio element
+  const navigate = useNavigate(); // To handle navigation
 
   useEffect(() => {
     const playAudio = () => {
@@ -30,6 +33,28 @@ const Hero = () => {
       document.removeEventListener("click", playAudio); // Clean up the event listener
     };
   }, [isMuted]);
+
+  // Define sounds within About
+  const hoverSoundUrl = "/sounds/button-hover-click.wav";
+  const [playHoverSound] = useSound(hoverSoundUrl, {
+    volume: 1,
+    soundEnabled: !isMuted,
+  });
+
+  const clickSoundUrl = "/sounds/old-computer-click-152513.mp3";
+  const [playClickSound] = useSound(clickSoundUrl, {
+    volume: 1,
+    soundEnabled: !isMuted,
+  });
+
+  const handleMouseEnter = () => {
+    playHoverSound(); // Play hover sound if not muted
+  };
+
+  const handleClick = () => {
+    playClickSound(); // Play click sound if not muted
+    navigate("/load-animation"); // Navigate immediately on button click
+  };
 
   return (
     <div className="hero-banner-1">
@@ -72,7 +97,13 @@ const Hero = () => {
             <br />
             <h1 className="glowing-text">Welcome to the Future</h1>
             <p className="hero-subtext">Explore the unknown universe</p>
-            <button className="hero-button">Discover More</button>
+            <button
+              onClick={handleClick}
+              onMouseEnter={handleMouseEnter}
+              className="hero-button"
+            >
+              Discover More
+            </button>
           </div>
         </ParallaxLayer>
       </Parallax>
