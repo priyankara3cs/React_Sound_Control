@@ -1,0 +1,100 @@
+.list-page-container {
+  display: flex;
+  flex-wrap: nowrap; /* Ensure no wrapping on larger screens */
+  justify-content: space-between; /* Add spacing between the two columns */
+  margin: 0 auto;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.column {
+  box-sizing: border-box;
+}
+
+/* PC Screen: Two-column layout with 10% and 90% */
+.column-30 {
+  flex: 0 0 10%;
+  background-color: lightgray;
+  height: 100vh;
+}
+
+.column-70 {
+  flex: 0 0 90%;
+  background-color: antiquewhite;
+}
+
+/* Mobile Screen: Single-column layout, 100% width */
+@media (max-width: 768px) {
+  .list-page-container {
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+
+  .column-30 {
+    height: auto;
+  }
+
+  .column-30,
+  .column-70 {
+    flex: 0 0 100%; /* Full width on mobile */
+  }
+}
+
+/* .......................... */
+
+.conserve-chart-01-text-box-1-opacity {
+  background-color: transparent;
+  width: 100%;
+  /* color: #091294; */
+  color: #000055;
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.conserve-chart-01-text-box-2-opacity {
+  opacity: 0.4;
+  background-color: transparent;
+  width: 100%;
+  color: #000055;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.conserve-chart-01-text-box-3-opacity {
+  opacity: 0.4;
+  background-color: transparent;
+  width: 100%;
+  color: #000055;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.conserve-chart-01-text-box-4-opacity {
+  opacity: 0.4;
+  background-color: transparent;
+  width: 100%;
+  color: #000055;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.conserve-chart-01-text-box-5-opacity {
+  opacity: 0.4;
+  background-color: transparent;
+  width: 100%;
+  /* color: #003775; */
+  color: #000055;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.selected-text {
+  opacity: 1;
+}
