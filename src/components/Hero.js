@@ -10,9 +10,25 @@ const Hero = () => {
   const audioRef = useRef(null); // Reference to the audio element
 
   useEffect(() => {
+    const playAudio = () => {
+      if (audioRef.current && !isMuted) {
+        audioRef.current.muted = false;
+        audioRef.current.play().catch((error) => {
+          console.log("Autoplay prevented. User interaction needed.");
+        });
+      }
+    };
+
     if (audioRef.current) {
       audioRef.current.muted = isMuted; // Mute/unmute based on the context state
+      playAudio(); // Try playing the audio on mount
     }
+
+    document.addEventListener("click", playAudio); // Attach a click listener to play audio on interaction
+
+    return () => {
+      document.removeEventListener("click", playAudio); // Clean up the event listener
+    };
   }, [isMuted]);
 
   return (
@@ -62,7 +78,7 @@ const Hero = () => {
       </Parallax>
 
       {/* Background Sound */}
-      <audio ref={audioRef} src="/sounds/bg.wav" autoPlay loop />
+      <audio ref={audioRef} src="/sounds/bg.wav" loop />
     </div>
   );
 };

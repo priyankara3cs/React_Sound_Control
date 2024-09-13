@@ -59,6 +59,13 @@ const Navbar = () => {
             soundSrc="/sounds/old-computer-click-152513.mp3"
             label="List Pages"
           />
+        </li>{" "}
+        <li>
+          <ButtonWithSound
+            to="/hero/"
+            soundSrc="/sounds/old-computer-click-152513.mp3"
+            label="Hero"
+          />
         </li>
       </ul>
       <button onClick={toggleMute} style={styles.muteButton}>
