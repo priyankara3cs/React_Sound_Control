@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Particles from "react-tsparticles";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import "./Hero.css";
+import { useSoundContext } from "./SoundContext";
 import Robot from "./Robot"; // Import the robot component
 
 const Hero = () => {
+  const { isMuted } = useSoundContext(); // Get the mute state from context
+  const audioRef = useRef(null); // Reference to the audio element
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.muted = isMuted; // Mute/unmute based on the context state
+    }
+  }, [isMuted]);
+
   return (
     <div className="hero-banner-1">
       {/* Parallax Background */}
@@ -50,6 +60,9 @@ const Hero = () => {
           </div>
         </ParallaxLayer>
       </Parallax>
+
+      {/* Background Sound */}
+      <audio ref={audioRef} src="/sounds/bg.wav" autoPlay loop />
     </div>
   );
 };
