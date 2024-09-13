@@ -34,23 +34,30 @@ const Navbar = () => {
         </li>
         <li>
           <ButtonWithSound
-            to="/about"
+            to="/about/"
             soundSrc="/sounds/old-computer-click-152513.mp3"
             label="About"
           />
         </li>
         <li>
           <ButtonWithSound
-            to="/goo-blobs"
+            to="/goo-blobs/"
             soundSrc="/sounds/old-computer-click-152513.mp3"
             label="Goo Blobs"
           />
         </li>
         <li>
           <ButtonWithSound
-            to="/sandbox"
+            to="/sandbox/"
             soundSrc="/sounds/old-computer-click-152513.mp3"
             label="Sandbox"
+          />
+        </li>
+        <li>
+          <ButtonWithSound
+            to="/list-pages/"
+            soundSrc="/sounds/old-computer-click-152513.mp3"
+            label="List Pages"
           />
         </li>
       </ul>
