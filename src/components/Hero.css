@@ -5,29 +5,36 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  background-color: #012020 !important;
+  z-index: 0;
 }
 
 .hero-video-1 {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  transform: translate(-50%, -50%);
-  z-index: -2; /* Place the video behind everything */
-  object-fit: cover; /* Ensures the video covers the whole area */
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  background-image: url("/public/images/Screenshot.png");
+}
+
+.robot-container {
+  position: relative;
+  z-index: 0;
 }
 
 .hero-content {
   text-align: center;
   color: #00ffff;
-  z-index: 1; /* Ensure it's above the robot and video */
+  z-index: 200 !important;
+  position: relative;
 }
 
 .glowing-text {
   font-size: 4rem;
   color: #00ffff;
+  z-index: 200 !important;
   text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
   animation: flicker 1.5s infinite alternate;
 }
@@ -92,5 +99,84 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.text-container {
+  color: #ffffffac;
+  margin-top: -30vh;
+  width: 100vw;
+  height: 100vh;
+  font-weight: bold;
+  font-size: 36px;
+  position: absolute;
+  overflow: hidden;
+  z-index: -3 !important;
+}
+
+.text-container > div {
+  animation: come2life linear 10s infinite;
+  transform-origin: center center;
+  opacity: 0;
+  width: 250px;
+  height: 200px;
+  position: absolute;
+  backface-visibility: hidden;
+  z-index: -3;
+}
+
+.text-container > div:nth-child(1) {
+  left: 10vw;
+  top: 60vh;
+  animation-delay: 0s;
+}
+
+.text-container > div:nth-child(2) {
+  left: 80vw;
+  top: 25vh;
+  animation-delay: 4s;
+}
+
+.text-container > div:nth-child(3) {
+  left: 50vw;
+  top: 58vh;
+  animation-delay: 8s;
+}
+
+.text-container > div:nth-child(4) {
+  left: 25vw;
+  top: 60vh;
+  animation-delay: 6s;
+}
+
+.text-container > div:nth-child(5) {
+  left: 80vw;
+  top: 60vh;
+  animation-delay: 2s;
+}
+
+@keyframes come2life {
+  0% {
+    transform: scale3d(0, 0, 1) rotate(0.02deg);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  25% {
+    transform: scale3d(1, 1, 1) rotate(0.02deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  40% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale3d(4, 4, 1) rotate(0.02deg);
+    filter: blur(10px);
   }
 }
