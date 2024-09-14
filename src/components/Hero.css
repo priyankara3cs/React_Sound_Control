@@ -68,6 +68,8 @@
   border-radius: 5px;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
   transition: all 0.3s ease-in-out;
+  z-index: 300;
+  position: relative;
 }
 
 .hero-button:hover {
@@ -111,7 +113,7 @@
   font-size: 36px;
   position: absolute;
   overflow: hidden;
-  z-index: -3 !important;
+  z-index: -1 !important;
 }
 
 .text-container > div {
@@ -122,7 +124,7 @@
   height: 200px;
   position: absolute;
   backface-visibility: hidden;
-  z-index: -3;
+  z-index: -1;
 }
 
 .text-container > div:nth-child(1) {

@@ -84,6 +84,16 @@ const Hero = () => {
           </div>
         </ParallaxLayer>
 
+        <ParallaxLayer offset={0.3} speed={0.1}>
+          <div className="text-container">
+            <div>Hello, This is block of a text</div>
+            <div>Hello, This is another block of text</div>
+            <div>Hello, This is yet another block of text</div>
+            <div>Hello, This is also a block of text</div>
+            <div>Hello, This is the last block of text</div>
+          </div>
+        </ParallaxLayer>
+
         <ParallaxLayer offset={0.1} speed={0.2}>
           <div className="hero-content">
             <h1 className="glowing-text">
@@ -108,16 +118,6 @@ const Hero = () => {
             >
               Discover More
             </button>
-          </div>
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={0.3} speed={0.1}>
-          <div className="text-container">
-            <div>Hello, This is block of a text</div>
-            <div>Hello, This is another block of text</div>
-            <div>Hello, This is yet another block of text</div>
-            <div>Hello, This is also a block of text</div>
-            <div>Hello, This is the last block of text</div>
           </div>
         </ParallaxLayer>
       </Parallax>
