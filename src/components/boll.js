@@ -28,7 +28,7 @@ function Boll() {
       <Canvas>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
-        <Sphere style={{ width: "200px", height: "200px" }} />
+        <Sphere />
       </Canvas>
       <div style={{ height: "70vh" }}></div>
     </div>
