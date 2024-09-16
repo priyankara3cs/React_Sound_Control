@@ -9,9 +9,10 @@ import SandBox from "./components/sandbox";
 import LoadAnimation from "./components/load-animation";
 import Test from "./components/test";
 import ListPages from "./components/ListPages/list-pages";
-import Hero from "./components/Hero"
+import Hero from "./components/Hero";
+import Boll from "./components/boll";
 
-import { SoundProvider } from "./components/SoundContext"; // Import SoundProvider instead of SoundContextProvider
+import { SoundProvider } from "./components/SoundContext"; // Import SoundProvider
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
           <Route path="/test" element={<Test />} />
           <Route path="/list-pages" element={<ListPages />} />
           <Route path="/hero" element={<Hero />} />
+          {/* Render Boll component directly */}
+          <Route path="/boll" element={<Boll />} />
         </Routes>
       </Router>
       <Footer />

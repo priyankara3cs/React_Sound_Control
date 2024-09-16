@@ -6,6 +6,8 @@
     "@mui/material": "^6.0.2",
     "@react-spring/parallax": "^9.7.4",
     "@react-spring/web": "^9.7.4",
+    "@react-three/drei": "^9.112.0",
+    "@react-three/fiber": "^8.17.7",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -18,6 +20,7 @@
     "react-scripts": "5.0.1",
     "react-spring": "^9.7.4",
     "react-tsparticles": "^2.12.2",
+    "three": "^0.168.0",
     "use-sound": "^4.0.3",
     "web-vitals": "^2.1.4"
   },
