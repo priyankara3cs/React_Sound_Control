@@ -11,7 +11,8 @@ import Test from "./components/test";
 import ListPages from "./components/ListPages/list-pages";
 import Hero from "./components/Hero";
 import Boll from "./components/boll";
-import Page from "./components/FunnyAnimation";
+import Page from "./components/FunnyAnimation"
+import ThreeD from "./components/3d";
 
 import { SoundProvider } from "./components/SoundContext"; // Import SoundProvider
 
@@ -33,6 +34,7 @@ function App() {
           {/* Render Boll component directly */}
           <Route path="/boll" element={<Boll />} />
           <Route path="/funny-animation" element={<Page />} />
+          <Route path="/3d" element={<ThreeD />} />
         </Routes>
       </Router>
       <Footer />

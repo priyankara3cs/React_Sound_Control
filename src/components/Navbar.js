@@ -78,7 +78,14 @@ const Navbar = () => {
           <ButtonWithSound
             to="/funny-animation/"
             soundSrc="/sounds/old-computer-click-152513.mp3"
-            label="3D"
+            label="3d-animation"
+          />
+        </li>
+        <li>
+          <ButtonWithSound
+            to="/3d/"
+            soundSrc="/sounds/old-computer-click-152513.mp3"
+            label="3D-scroll"
           />
         </li>
       </ul>

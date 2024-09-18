@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.right-column {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.scrollable-content {
+  height: 200vh;
+  padding: 20px;
+}
+
+.canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure 3D animation is visible on mobile screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-column {
+    height: 50vh; /* Adjust the height for the 3D animation */
+  }
+
+  .right-column {
+    height: 50vh; /* Adjust the height for the content */
+    overflow-y: auto;
+  }
+
+  .scrollable-content {
+    height: auto; /* Allow content to be scrollable within its container */
+  }
+
+  .canvas-container {
+    height: 100%; /* Make sure the canvas container takes up the full height of its parent */
+  }
+}
