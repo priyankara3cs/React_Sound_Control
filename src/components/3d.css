@@ -28,26 +28,26 @@
   height: 100%;
 }
 
-/* Ensure 3D animation is visible on mobile screens */
+/* mobile screens */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
   }
 
   .left-column {
-    height: 50vh; /* Adjust the height for the 3D animation */
+    height: 50vh;
   }
 
   .right-column {
-    height: 50vh; /* Adjust the height for the content */
+    height: 50vh;
     overflow-y: auto;
   }
 
   .scrollable-content {
-    height: auto; /* Allow content to be scrollable within its container */
+    height: auto;
   }
 
   .canvas-container {
-    height: 100%; /* Make sure the canvas container takes up the full height of its parent */
+    height: 100%;
   }
 }
