@@ -16,7 +16,7 @@ function Sphere() {
 
   return (
     <mesh ref={mesh}>
-      <sphereGeometry args={[3, 32, 32]} />
+      <sphereGeometry args={[1.5, 32, 32]} />
       <meshStandardMaterial map={textureMap} />
     </mesh>
   );
@@ -25,13 +25,13 @@ function Sphere() {
 function Boll() {
   return (
     <div>
-      <div style={{ height: "20vh" }}></div>
+      <div style={{ height: "2vh" }}></div>
       <Canvas>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
         <Sphere />
       </Canvas>
-      <div style={{ height: "50vh" }}></div>
+      <div style={{ height: "2vh" }}></div>
     </div>
   );
 }
