@@ -11,6 +11,7 @@ import Test from "./components/test";
 import ListPages from "./components/ListPages/list-pages";
 import Hero from "./components/Hero";
 import Boll from "./components/boll";
+import Page from "./components/FunnyAnimation";
 
 import { SoundProvider } from "./components/SoundContext"; // Import SoundProvider
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/hero" element={<Hero />} />
           {/* Render Boll component directly */}
           <Route path="/boll" element={<Boll />} />
+          <Route path="/funny-animation" element={<Page />} />
         </Routes>
       </Router>
       <Footer />
